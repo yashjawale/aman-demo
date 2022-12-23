@@ -1,2 +1,0 @@
-SENDGRID_API_KEY
-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
