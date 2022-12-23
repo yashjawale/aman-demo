@@ -1,0 +1,112 @@
+.hero {
+	width: 100%;
+	height: 70vh;
+	background-image: linear-gradient(
+			to bottom,
+			rgba(196, 196, 196, 0) 0%,
+			rgba(45, 45, 45, 0.06) 40%,
+			rgba(18, 18, 18, 0.08) 50%,
+			rgba(0, 0, 0, 0.7) 100%
+		),
+		url(../assets/images/homepage/hero.jpg);
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 30px;
+	margin-bottom: var(--gap);
+}
+.hero > h1 {
+	font-size: 4.2rem;
+	width: 100%;
+	text-align: center;
+	line-height: 1;
+	margin-bottom: 16px;
+	color: #fff;
+}
+.hero > h2 {
+	font-size: 1.5rem;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+
+.video-container {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+}
+
+.video-container::after {
+	padding-top: 56.25%;
+	display: block;
+	content: "";
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.review .rev-author {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 18px;
+}
+h2.review-section-head {
+	padding-bottom: 56px;
+}
+.review:not(:last-child) {
+	padding-bottom: 46px;
+}
+
+.quote-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	/* max-width: 900px; */
+}
+div.quote-img {
+	width: 112px;
+	height: 112px;
+	border: 2px #000 solid;
+	border-radius: 50%;
+	margin-bottom: 16px;
+}
+.quote-section p {
+	font-family: "PT Serif", serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 2.5rem;
+	line-height: 1.2;
+	text-align: center;
+	color: var(--primary);
+	margin-top: 36px;
+	margin-bottom: 36px;
+}
+.quote-author {
+	font-size: 1.5rem;
+	font-family: "PT Serif", serif;
+	font-weight: bold;
+}
+.quote-designation {
+	font-size: 14px;
+	line-height: 2;
+}
+/* .review:first-child {
+	color: red;
+} */
+@media all and (max-width: 768px) {
+	.hero > h1,
+	.hero > h2 {
+		text-align: left;
+	}
+}

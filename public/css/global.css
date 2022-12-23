@@ -1,0 +1,508 @@
+/* @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Roboto&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&family=Roboto:wght@400;500&display=swap");
+
+/* --- REMOVING DEFAULT --- */
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+
+/* --- COLORS --- */
+
+/* Default theme colors */
+:root {
+	--primary: #fdc124;
+	--bg-col: #fff;
+	--scroll-bg: #ececec;
+	--primary-hover: #ecb62e;
+	--cal-today: #f4efd4;
+	--spinner-bg: #fff;
+
+	--neu-bg: #f2f2f2;
+	--neu-top: rgba(255, 255, 255, 1);
+	--neu-bottom: rgba(0, 0, 0, 0.3);
+	--spinner-shadow: rgba(0, 0, 0, 0.1);
+
+	/*Navigation*/
+	--nav-bg: #fdc124;
+	--nav-links: #fff;
+	--nav-links-hover: #000;
+	--nav-btn-bg: #fff;
+	--nav-btn-bg-hover: #ddd;
+	--nav-btn-txt: #000;
+	--nav-submenu-bg: #f9f9f9;
+	--nav-submenu-head: #fdc124;
+	--nav-submenu-links: #000;
+	--nav-submenu-highlight: #ddd;
+	--nav-burger: #fff;
+
+	/*Text*/
+	--heading: #000;
+	--body: #000;
+	--grey-text: #4f4f4f;
+	--primary-btn-bg: #fdc124;
+	--secondary-btn-border: #bdbdbd;
+
+	/*Forms*/
+	--form-bg: #f2f2f2;
+	--form-select-border: #bdbdbd;
+	--form-color: #bdbdbd;
+	--form-p: #828282;
+	--form-hover: #f3f3f3;
+	--form-dark-grey: #4f4f4f;
+
+	/*Footer*/
+	--foot-bg: #f2f2f2;
+	--foot-line: #bdbdbd;
+	--foot-links: #333333;
+	--foot-head: #000;
+
+	/*ZigZag Decal*/
+	--zig-l: #fdc124;
+	--zig-b: #bdbdbd;
+	--zig-f: #fdc124;
+
+	/*Layout*/
+	--gutter-width: 15%;
+	--gap: 80px;
+	--cont-width: 300px;
+	--cont-gap: 100px;
+	--radius: 8px;
+}
+
+/* Dark theme colors */
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--primary: #fdd368;
+		--bg-col: #121212;
+		--scroll-bg: #000;
+		--primary-hover: #ddba62;
+		--cal-today: rgba(253, 211, 104, 0.4);
+		--spinner-bg: #121212;
+
+		--neu-bg: #202020;
+		--neu-top: #292929;
+		--neu-bottom: #151311;
+		--spinner-shadow: rgba(255, 255, 255, 0.2);
+
+		
+		--nav-bg: #fdd368;
+		--nav-links: #000;
+		--nav-links-hover: #fdfdfd;
+		--nav-btn-bg: #666;
+		--nav-btn-bg-hover: #000;
+		--nav-btn-txt: #fdfdfd;
+		--nav-submenu-bg: #666;
+		--nav-submenu-head: #fdd368;
+		--nav-submenu-links: #e0e0e0;
+		--nav-submenu-highlight: #888;
+		--nav-burger: #000;
+
+		
+		--heading: #e0e0e0;
+		--body: #e0e0e0;
+		
+		--grey-text: #a0a0a0;
+		--primary-btn-bg: #fdd368;
+		--secondary-btn-border: #bdbdbd;
+
+		
+		--form-bg: #2c2c2c;
+		--form-select-border: #383838;
+		--form-color: #bdbdbd;
+		--form-p: #828282;
+		--form-hover: #474747;
+		--form-dark-grey: #a1a1a1;
+
+		
+		--foot-bg: #000;
+		--foot-line: #bdbdbd;
+		--foot-links: #a0a0a0;
+		--foot-head: #e0e0e0;
+
+		
+		--zig-l: #fdd368;
+		--zig-b: #bdbdbd;
+		--zig-f: #fdd368;
+	}
+} */
+
+/* --- CUSTOMIZING SCROLLBAR --- */
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--primary) var(--scroll-bg);
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+	width: 12px;
+}
+*::-webkit-scrollbar-track {
+	background: var(--scroll-bg);
+}
+*::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+	border-radius: 20px;
+	border: 2px solid var(--scroll-bg);
+}
+
+/* .construction {
+	background: repeating-linear-gradient(
+		45deg,
+		#fad201,
+		#fad201 20px,
+		#000 20px,
+		#000 40px
+	);
+	width: 100%;
+	padding: 16px;
+	color: #fff !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold !important;
+}
+.construction > h1 {
+	color: #fff !important;
+	background-color: #000;
+	padding: 8px;
+	text-align: center;
+}
+.construction > p {
+	background-color: #000;
+	padding: 8px;
+	text-align: center;
+	text-transform: uppercase;
+} */
+/*<div class="construction">
+				<h1>&lt;&lt;&lt; UNDER DEVELOPMENT &gt;&gt;&gt;</h1>
+				<p>This page will be available shortly...</p>
+			</div>*/
+
+/* --- TYPOGRAPHY --- */
+
+nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "PT Serif", serif;
+	color: var(--heading);
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	color: var(--body);
+}
+
+.grey-text {
+	color: var(--grey-text);
+}
+
+form,
+input,
+select,
+option,
+textarea {
+	font-family: "Roboto", sans-serif;
+	/* font-weight: bold; */
+	font-size: 14px;
+	line-height: 18px;
+}
+
+/* --- FONT SIZES --- */
+
+nav {
+	font-size: 16px;
+	font-weight: bold;
+}
+p {
+	font-size: 1rem;
+	padding-bottom: 16px;
+	line-height: 1.5;
+}
+h1,
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.5rem;
+	padding-bottom: 16px;
+}
+h1 {
+	padding-bottom: 1.5rem;
+}
+
+/* --- GLOBAL BACKGROUND COLOR --- */
+
+body {
+	background-color: var(--bg-col);
+}
+
+::-moz-selection {
+	/* Code for Firefox */
+	color: var(--bg-col);
+	background: var(--primary);
+}
+
+::selection {
+	color: var(--bg-col);
+	background: var(--primary);
+}
+
+/* --- GLOBAL ELEMENTS --- */
+
+/* Image inside div */
+
+.image-cont {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.image-cont > img {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	object-fit: cover;
+}
+
+/*============= LOADING SPINNER ==============*/
+
+/*Container*/
+#spinner-cont {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	background-color: var(--spinner-bg);
+
+	z-index: 9999999;
+	pointer-events: none;
+
+	transition: opacity 1s ease-in-out;
+}
+
+#floatingCirclesG {
+	position: relative;
+	width: 125px;
+	height: 125px;
+	margin: auto;
+	transform: scale(0.6);
+	-o-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+}
+
+.f_circleG {
+	position: absolute;
+	background-color: rgb(255, 255, 255);
+	height: 22px;
+	width: 22px;
+	border-radius: 12px;
+	-o-border-radius: 12px;
+	-ms-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	animation-name: f_fadeG;
+	-o-animation-name: f_fadeG;
+	-ms-animation-name: f_fadeG;
+	-webkit-animation-name: f_fadeG;
+	-moz-animation-name: f_fadeG;
+	animation-duration: 0.782s;
+	-o-animation-duration: 0.782s;
+	-ms-animation-duration: 0.782s;
+	-webkit-animation-duration: 0.782s;
+	-moz-animation-duration: 0.782s;
+	animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	animation-direction: normal;
+	-o-animation-direction: normal;
+	-ms-animation-direction: normal;
+	-webkit-animation-direction: normal;
+	-moz-animation-direction: normal;
+}
+
+#frotateG_01 {
+	left: 0;
+	top: 51px;
+	animation-delay: 0.2895s;
+	-o-animation-delay: 0.2895s;
+	-ms-animation-delay: 0.2895s;
+	-webkit-animation-delay: 0.2895s;
+	-moz-animation-delay: 0.2895s;
+}
+
+#frotateG_02 {
+	left: 15px;
+	top: 15px;
+	animation-delay: 0.386s;
+	-o-animation-delay: 0.386s;
+	-ms-animation-delay: 0.386s;
+	-webkit-animation-delay: 0.386s;
+	-moz-animation-delay: 0.386s;
+}
+
+#frotateG_03 {
+	left: 51px;
+	top: 0;
+	animation-delay: 0.4825s;
+	-o-animation-delay: 0.4825s;
+	-ms-animation-delay: 0.4825s;
+	-webkit-animation-delay: 0.4825s;
+	-moz-animation-delay: 0.4825s;
+}
+
+#frotateG_04 {
+	right: 15px;
+	top: 15px;
+	animation-delay: 0.589s;
+	-o-animation-delay: 0.589s;
+	-ms-animation-delay: 0.589s;
+	-webkit-animation-delay: 0.589s;
+	-moz-animation-delay: 0.589s;
+}
+
+#frotateG_05 {
+	right: 0;
+	top: 51px;
+	animation-delay: 0.6855s;
+	-o-animation-delay: 0.6855s;
+	-ms-animation-delay: 0.6855s;
+	-webkit-animation-delay: 0.6855s;
+	-moz-animation-delay: 0.6855s;
+}
+
+#frotateG_06 {
+	right: 15px;
+	bottom: 15px;
+	animation-delay: 0.782s;
+	-o-animation-delay: 0.782s;
+	-ms-animation-delay: 0.782s;
+	-webkit-animation-delay: 0.782s;
+	-moz-animation-delay: 0.782s;
+}
+
+#frotateG_07 {
+	left: 51px;
+	bottom: 0;
+	animation-delay: 0.8785s;
+	-o-animation-delay: 0.8785s;
+	-ms-animation-delay: 0.8785s;
+	-webkit-animation-delay: 0.8785s;
+	-moz-animation-delay: 0.8785s;
+}
+
+#frotateG_08 {
+	left: 15px;
+	bottom: 15px;
+	animation-delay: 0.975s;
+	-o-animation-delay: 0.975s;
+	-ms-animation-delay: 0.975s;
+	-webkit-animation-delay: 0.975s;
+	-moz-animation-delay: 0.975s;
+}
+
+@keyframes f_fadeG {
+	0% {
+		background-color: var(--primary);
+	}
+
+	100% {
+		background-color: var(--bg-col);
+	}
+}
+
+@-o-keyframes f_fadeG {
+	0% {
+		background-color: var(--primary);
+	}
+
+	100% {
+		background-color: var(--bg-col);
+	}
+}
+
+@-ms-keyframes f_fadeG {
+	0% {
+		background-color: var(--primary);
+	}
+
+	100% {
+		background-color: var(--bg-col);
+	}
+}
+
+@-webkit-keyframes f_fadeG {
+	0% {
+		background-color: var(--primary);
+	}
+
+	100% {
+		background-color: var(--bg-col);
+	}
+}
+
+@-moz-keyframes f_fadeG {
+	0% {
+		background-color: var(--primary);
+	}
+
+	100% {
+		background-color: var(--bg-col);
+	}
+}
+
+/* ====================== POST SPINNER ================= */
+
+.spinner-post {
+	position: fixed;
+	width: 250px;
+	height: 250px;
+	background-color: var(--bg-col);
+	border-radius: var(--radius);
+	top: 50%;
+	left: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* margin-top: -150px;
+	margin-left: -150px; */
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	transition: opacity 0.8s ease-in-out;
+
+	-webkit-box-shadow: -4px 10px 26px 10px var(--spinner-shadow);
+	-moz-box-shadow: -4px 10px 26px 10px var(--spinner-shadow);
+	box-shadow: -4px 10px 26px 10px var(--spinner-shadow);
+}
+.spinner-post.post-loaded {
+	opacity: 0;
+}
+
+#spinner-cont.spinner-loaded {
+	opacity: 0;
+}
